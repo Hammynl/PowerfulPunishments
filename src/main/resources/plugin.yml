@@ -1,0 +1,16 @@
+name: PowerfulPunishments
+version: '${project.version}'
+main: io.github.hammynl.powerfulpunishments.PowerfulPunishments
+api-version: 1.13
+authors: [ Hammynl ]
+description: A punishment plugin
+website: hammynl.github.io
+commands:
+  pfp:
+    description: "very nice!!1"
+    usage: "poep"
+  ban:
+    description: "very nice!!1"
+    usage: "kkr "
+
+

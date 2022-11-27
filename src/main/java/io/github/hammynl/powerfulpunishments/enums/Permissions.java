@@ -2,7 +2,8 @@ package io.github.hammynl.powerfulpunishments.enums;
 
 public enum Permissions {
 
-    MAIN_MENU("pfp.menu");
+    MAIN_MENU("pfp.menu"),
+    PUNISH("pfp.punish");
 
     private String permission;
 

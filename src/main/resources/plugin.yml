@@ -7,10 +7,10 @@ description: A punishment plugin
 website: hammynl.github.io
 commands:
   pfp:
-    description: "very nice!!1"
-    usage: "poep"
-  ban:
-    description: "very nice!!1"
-    usage: "kkr "
+    description: "Shows the help page"
+    usage: "/pfp"
+  punish:
+    description: "Opens the punishment menu for that player"
+    usage: "Incorrect usage: /punish <name>"
 
 

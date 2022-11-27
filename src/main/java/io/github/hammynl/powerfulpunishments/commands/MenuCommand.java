@@ -1,21 +1,17 @@
 package io.github.hammynl.powerfulpunishments.commands;
 
-import io.github.hammynl.powerfulpunishments.enums.Messages;
 import io.github.hammynl.powerfulpunishments.enums.Permissions;
-import io.github.hammynl.powerfulpunishments.menu.MainMenu;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class MenuCommand extends BaseCommand {
 
     public MenuCommand() {
-        super("pfp", "pfp.menu", 0, 1, true);
+        super("pfp", Permissions.MAIN_MENU.toString(), 0, 1, true);
     }
 
     @Override
     protected void handleCommand(CommandSender sender, String[] args) {
-        new MainMenu().openInv((Player) sender);
+        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e&m=====&r &c&lPunishment&6&lManager &e&m====="));
     }
 }

@@ -8,8 +8,8 @@ public enum Query {
                     "[issuer]       VARCHAR(36)," +
                     "[type]         VARCHAR(10)," +
                     "[reason]       VARCHAR(100)," +
-                    "[duration]     INTEGER," +
-                    "[date]         DATE                    NOT NULL" +
+                    "[issuedTime]    INTEGER," +
+                    "[duration]      INTEGER" +
                     ");"
     );
 

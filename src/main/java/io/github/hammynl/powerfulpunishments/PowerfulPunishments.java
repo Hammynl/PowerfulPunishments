@@ -48,6 +48,6 @@ public final class PowerfulPunishments extends JavaPlugin {
     }
 
     private void registerUtils() {
-
+        StorageUtil.getInstance().setup(this);
     }
 }

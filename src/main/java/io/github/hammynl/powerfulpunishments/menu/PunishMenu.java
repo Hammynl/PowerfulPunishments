@@ -55,7 +55,7 @@ public class PunishMenu extends BaseMenu {
     public void handleClicks(InventoryClickEvent event) {
         if(event.getSlot() == 19)
         {
-            StorageUtil.getInstance().executeQuery("");
+
         }
     }
 }

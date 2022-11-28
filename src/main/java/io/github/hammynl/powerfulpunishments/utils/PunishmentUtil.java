@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class PunishmentUtil {
 
-    private StorageUtil storageUtil = StorageUtil.getInstance();
+    private DatabaseUtil storageUtil = DatabaseUtil.getInstance();
 
 
     public List<PunishmentModel> getPunishmentOfType(UUID uuid, PunishmentType type) {

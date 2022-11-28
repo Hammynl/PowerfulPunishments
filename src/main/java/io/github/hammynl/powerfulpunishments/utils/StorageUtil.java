@@ -1,24 +1,19 @@
 package io.github.hammynl.powerfulpunishments.utils;
 
 import io.github.hammynl.powerfulpunishments.PowerfulPunishments;
-import io.github.hammynl.powerfulpunishments.enums.Query;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.*;
-import java.util.UUID;
 
 public class StorageUtil {
 
-    private Connection connection;
-    private File file;
+    private FileConfiguration languageConfig = new YamlConfiguration();
     private static StorageUtil instance;
 
     private StorageUtil() {}
-
-    public Connection getConnection() {
-        return connection;
-    }
 
     public static StorageUtil getInstance() {
         if(instance == null) {
@@ -27,25 +22,24 @@ public class StorageUtil {
         return instance;
     }
 
-
+    public FileConfiguration getLanguage() {
+        return languageConfig;
+    }
 
     public void setup(PowerfulPunishments plugin) {
-        this.file = new File(plugin.getDataFolder(), "data.db");
+        try
+        {
+            File languageFile = new File(plugin.getDataFolder(), "language.yml");
+            if (!languageFile.exists()) {
+                languageFile.getParentFile().mkdirs();
+                plugin.saveResource("language.yml", false);
 
-        try {
-            // Create file if it does not exist
-            if (!file.exists()) file.createNewFile();
-
-            Class.forName("org.sqlite.JDBC");
-            this.connection = DriverManager.getConnection("jdbc:sqlite:" + file.getAbsolutePath());
-
-            Statement statement = connection.createStatement();
-            statement.executeQuery(Query.CREATE_PUNISHMENT_TABLE.toString());
-
-
-        } catch (SQLException | IOException | ClassNotFoundException exception) {
-            System.out.println("An error occured while trying to initiate the database connection");
+            }
+            languageConfig.load(languageFile);
+        } catch (IOException | InvalidConfigurationException exception) {
             exception.printStackTrace();
         }
+
     }
+
 }

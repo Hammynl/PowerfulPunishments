@@ -4,10 +4,15 @@ import io.github.hammynl.powerfulpunishments.commands.PunishCommand;
 import io.github.hammynl.powerfulpunishments.commands.MenuCommand;
 import io.github.hammynl.powerfulpunishments.listeners.JoinListener;
 import io.github.hammynl.powerfulpunishments.listeners.MenuListener;
+import io.github.hammynl.powerfulpunishments.utils.DatabaseUtil;
 import io.github.hammynl.powerfulpunishments.utils.StorageUtil;
 import org.bukkit.Bukkit;
 
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.IOException;
 
 public final class PowerfulPunishments extends JavaPlugin {
 
@@ -49,5 +54,6 @@ public final class PowerfulPunishments extends JavaPlugin {
 
     private void registerUtils() {
         StorageUtil.getInstance().setup(this);
+        DatabaseUtil.getInstance().setup(this);
     }
 }

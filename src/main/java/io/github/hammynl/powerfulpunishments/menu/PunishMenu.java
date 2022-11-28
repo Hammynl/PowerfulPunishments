@@ -2,7 +2,7 @@ package io.github.hammynl.powerfulpunishments.menu;
 
 
 import io.github.hammynl.powerfulpunishments.enums.Menu;
-import io.github.hammynl.powerfulpunishments.utils.StorageUtil;
+import io.github.hammynl.powerfulpunishments.enums.Permissions;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -53,7 +53,7 @@ public class PunishMenu extends BaseMenu {
 
     @Override
     public void handleClicks(InventoryClickEvent event) {
-        if(event.getSlot() == 19)
+        if(event.getSlot() == 19 && issuer.hasPermission(Permissions.PUNISHMENT_BAN.toString()))
         {
 
         }

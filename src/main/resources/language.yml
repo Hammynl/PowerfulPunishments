@@ -1,0 +1,5 @@
+ban-message:
+  - "&c&lYou have been banned!"
+  - "&6&lIssued by: [issuer]"
+  - "&r&oReason: [reason]"
+  - "&r&oDuration: [duration]"
